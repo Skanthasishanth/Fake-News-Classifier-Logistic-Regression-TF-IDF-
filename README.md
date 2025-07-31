@@ -17,6 +17,7 @@ This project is a Flask-based web application that detects whether a news articl
 
 ## 📁 Project Structure
 
+```
 fake_news_classifier/
 │
 ├── app.py # Flask app
@@ -37,6 +38,7 @@ fake_news_classifier/
 │ └── train_fake_news.py # Model training script (from Kaggle data)
 │
 └── README.md # Project README (this file)
+```
 
 ## 🧠 Model Training (optional)
 
@@ -67,8 +69,6 @@ Enter news content manually OR
 Upload a .txt or .pdf file.
 
 Click Predict.
-
-Download the result in .txt or .json format (optional).
 
 <img width="1920" height="666" alt="Screenshot 2025-07-31 112908" src="https://github.com/user-attachments/assets/0b2dd4e5-980c-48df-8b00-39e0befad559" />
 
