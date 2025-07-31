@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Fake News Classifier</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>📰 Fake News Classifier</h1>
+        <form method="POST" enctype="multipart/form-data">
+            <textarea name="news_text" placeholder="Paste news article text here...">{{ request.form.news_text }}</textarea><br>
+            <label>Or upload .txt/.pdf file:</label>
+            <input type="file" name="file"><br>
+            <button type="submit">Classify</button>
+        </form>
+
+        {% if prediction %}
+            <div class="result">
+                <h2>Result: {{ prediction }}</h2>
+                <p>Confidence: {{ confidence }}%</p>
+                <p><strong>Extracted Text:</strong></p>
+                <div class="output-box">{{ text[:500] }}{% if text|length > 500 %}...{% endif %}</div>
+                <p>
+                    <a href="/download/{{ txt_file }}">📄 Download TXT</a> |
+                    <a href="/download/{{ json_file }}">🧾 Download JSON</a>
+                </p>
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>
